@@ -8,5 +8,6 @@ class WeblerCucumberIntegrationApplicationTests {
 
 	@Test
 	void contextLoads() {
+
 	}
 }
