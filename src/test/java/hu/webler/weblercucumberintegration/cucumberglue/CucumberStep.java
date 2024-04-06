@@ -3,6 +3,7 @@ package hu.webler.weblercucumberintegration.cucumberglue;
 import hu.webler.weblercucumberintegration.model.UserRegistrationRequest;
 import io.cucumber.spring.CucumberContextConfiguration;
 import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.server.LocalServerPort;
@@ -13,6 +14,7 @@ import org.springframework.web.client.RestTemplate;
 @CucumberContextConfiguration
 @Getter
 @Setter
+@RequiredArgsConstructor
 public class CucumberStep {
 
     @LocalServerPort

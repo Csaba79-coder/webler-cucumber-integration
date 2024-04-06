@@ -15,9 +15,9 @@ public class Mapper {
         return user;
     }
 
-    public static UserRegistrationResponse mapUserEntityToUserRegResponse(User entity) {
+    public static UserRegistrationResponse mapUserEntityToRegResponse(User user) {
         UserRegistrationResponse response = new UserRegistrationResponse();
-        modelMapper.map(entity, response);
+        modelMapper.map(user, response);
         return response;
     }
 
