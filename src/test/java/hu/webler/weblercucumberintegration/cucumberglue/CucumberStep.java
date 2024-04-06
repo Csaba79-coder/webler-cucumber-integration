@@ -19,6 +19,7 @@ public class CucumberStep {
     private int port;
 
     private final RestTemplate restTemplate = new RestTemplate();
+
     private ResponseEntity<String> lastResponse;
 
     public void sendRegisterRequest(String username, String password) {
