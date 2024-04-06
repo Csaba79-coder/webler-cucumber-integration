@@ -22,7 +22,7 @@ public class CucumberStep {
     private ResponseEntity<String> lastResponse;
 
     public void sendRegisterRequest(String username, String password) {
-        String url = "http://loclahos:" + port + "/api/register";
+        String url = "http://localhost:" + port + "/api/register";
         UserRegistrationRequest request = new UserRegistrationRequest(username, password);
         lastResponse = restTemplate.postForEntity(url, request, String.class);
     }
