@@ -5,11 +5,15 @@ import hu.webler.weblercucumberintegration.entity.User;
 import hu.webler.weblercucumberintegration.model.UserRegistrationRequest;
 import hu.webler.weblercucumberintegration.model.UserRegistrationResponse;
 import hu.webler.weblercucumberintegration.persistence.UserRepository;
+import hu.webler.weblercucumberintegration.util.Mapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
+
+import static hu.webler.weblercucumberintegration.util.Mapper.mapUserEntityToUserRegResponse;
+import static hu.webler.weblercucumberintegration.util.Mapper.mapUserRegRequestToEntity;
 
 @Service
 @RequiredArgsConstructor
@@ -27,6 +31,7 @@ public class UserService {
             log.info(message);
             throw new UsernameAlreadyExistsException(message);
         }
-        return null;
+        User user = mapUserRegRequestToEntity(request);
+        return mapUserEntityToUserRegResponse(userRepository.save(user));
     }
 }
